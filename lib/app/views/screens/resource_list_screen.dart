@@ -30,7 +30,8 @@ class ResourceListScreen extends StatelessWidget {
                   onSelected: (year) {
                     controller.filterByYear(year == 0 ? null : year);
                   },
-                  itemBuilder: (context) => [
+                  itemBuilder: (context) =>
+                  [
                     const PopupMenuItem(value: 0, child: Text('All Years')),
                     ...years.map((y) => PopupMenuItem(value: y, child: Text(y.toString()))),
                   ],
@@ -44,10 +45,14 @@ class ResourceListScreen extends StatelessWidget {
             // Widget untuk search bar
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: SearchBarWidget(
-                onChanged: (query) {
-                  // Menggunakan context.read untuk memanggil method tanpa listen
-                  context.read<ResourceController>().search(query);
+              child: Consumer<ResourceController>(
+                builder: (context, controller, child) {
+                  return SearchBarWidget(
+                    onChanged: (query) {
+                      // Menggunakan context.read untuk memanggil method tanpa listen
+                      controller.search(query);
+                    },
+                  );
                 },
               ),
             ),

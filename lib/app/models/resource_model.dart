@@ -1,35 +1,61 @@
 // File: lib/app/models/resource_model.dart
-// Deskripsi: Model data untuk resource dari reqres.in.
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-part 'resource_model.freezed.dart';
+// Deskripsi: Model data untuk resource menggunakan Equatable dan JsonSerializable.
+import 'package:equatable/equatable.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'resource_model.g.dart';
 
 // Model untuk response API secara keseluruhan
-@freezed
-abstract class ResourceResponse with _$ResourceResponse {
-  const factory ResourceResponse({
-    required int page,
-    required int perPage,
-    required int total,
-    required int totalPages,
-    required List<Resource> data,
-  }) = _ResourceResponse;
+@JsonSerializable()
+class ResourceResponse extends Equatable {
+  final int page;
+  @JsonKey(name: 'per_page') // Sesuaikan dengan nama field di JSON jika berbeda
+  final int perPage;
+  final int total;
+  @JsonKey(name: 'total_pages') // Sesuaikan dengan nama field di JSON jika berbeda
+  final int totalPages;
+  final List<Resource> data;
 
-  factory ResourceResponse.fromJson(Map<String, dynamic> json) => _$ResourceResponseFromJson(json);
+  const ResourceResponse({
+    required this.page,
+    required this.perPage,
+    required this.total,
+    required this.totalPages,
+    required this.data,
+  });
+
+  factory ResourceResponse.fromJson(Map<String, dynamic> json) =>
+      _$ResourceResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ResourceResponseToJson(this);
+
+  @override
+  List<Object?> get props => [page, perPage, total, totalPages, data];
 }
 
 // Model untuk satu item resource
-@freezed
-abstract class Resource with _$Resource {
-  const factory Resource({
-    required int id,
-    required String name,
-    required int year,
-    required String color,
-    required String pantoneValue,
-  }) = _Resource;
+@JsonSerializable()
+class Resource extends Equatable {
+  final int id;
+  final String name;
+  final int year;
+  final String color;
+  @JsonKey(name: 'pantone_value') // Sesuaikan dengan nama field di JSON
+  final String pantoneValue;
 
-  factory Resource.fromJson(Map<String, dynamic> json) => _$ResourceFromJson(json);
+  const Resource({
+    required this.id,
+    required this.name,
+    required this.year,
+    required this.color,
+    required this.pantoneValue,
+  });
+
+  factory Resource.fromJson(Map<String, dynamic> json) =>
+      _$ResourceFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ResourceToJson(this);
+
+  @override
+  List<Object?> get props => [id, name, year, color, pantoneValue];
 }

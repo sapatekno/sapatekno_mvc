@@ -77,8 +77,7 @@ class ResourceController with ChangeNotifier {
     } else {
       _filteredResources = _allResources.where((r) => r.year == year).toList();
     }
-    // Reset pencarian saat filter
-    search('');
+    notifyListeners();
   }
 
   @override
