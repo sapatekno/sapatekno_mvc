@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ResourceResponse {
 
- int get page;@JsonKey(name: 'per_page') int get perPage; int get total;@JsonKey(name: 'total_pages') int get totalPages; List<Resource> get data;
+ int get page; int get perPage; int get total; int get totalPages; List<Resource> get data;
 /// Create a copy of ResourceResponse
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ResourceResponseCopyWith<$Res>  {
   factory $ResourceResponseCopyWith(ResourceResponse value, $Res Function(ResourceResponse) _then) = _$ResourceResponseCopyWithImpl;
 @useResult
 $Res call({
- int page,@JsonKey(name: 'per_page') int perPage, int total,@JsonKey(name: 'total_pages') int totalPages, List<Resource> data
+ int page, int perPage, int total, int totalPages, List<Resource> data
 });
 
 
@@ -157,7 +157,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int page, @JsonKey(name: 'per_page')  int perPage,  int total, @JsonKey(name: 'total_pages')  int totalPages,  List<Resource> data)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int page,  int perPage,  int total,  int totalPages,  List<Resource> data)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ResourceResponse() when $default != null:
 return $default(_that.page,_that.perPage,_that.total,_that.totalPages,_that.data);case _:
@@ -178,7 +178,7 @@ return $default(_that.page,_that.perPage,_that.total,_that.totalPages,_that.data
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int page, @JsonKey(name: 'per_page')  int perPage,  int total, @JsonKey(name: 'total_pages')  int totalPages,  List<Resource> data)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int page,  int perPage,  int total,  int totalPages,  List<Resource> data)  $default,) {final _that = this;
 switch (_that) {
 case _ResourceResponse():
 return $default(_that.page,_that.perPage,_that.total,_that.totalPages,_that.data);case _:
@@ -198,7 +198,7 @@ return $default(_that.page,_that.perPage,_that.total,_that.totalPages,_that.data
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int page, @JsonKey(name: 'per_page')  int perPage,  int total, @JsonKey(name: 'total_pages')  int totalPages,  List<Resource> data)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int page,  int perPage,  int total,  int totalPages,  List<Resource> data)?  $default,) {final _that = this;
 switch (_that) {
 case _ResourceResponse() when $default != null:
 return $default(_that.page,_that.perPage,_that.total,_that.totalPages,_that.data);case _:
@@ -213,13 +213,13 @@ return $default(_that.page,_that.perPage,_that.total,_that.totalPages,_that.data
 @JsonSerializable()
 
 class _ResourceResponse implements ResourceResponse {
-  const _ResourceResponse({required this.page, @JsonKey(name: 'per_page') required this.perPage, required this.total, @JsonKey(name: 'total_pages') required this.totalPages, required final  List<Resource> data}): _data = data;
+  const _ResourceResponse({required this.page, required this.perPage, required this.total, required this.totalPages, required final  List<Resource> data}): _data = data;
   factory _ResourceResponse.fromJson(Map<String, dynamic> json) => _$ResourceResponseFromJson(json);
 
 @override final  int page;
-@override@JsonKey(name: 'per_page') final  int perPage;
+@override final  int perPage;
 @override final  int total;
-@override@JsonKey(name: 'total_pages') final  int totalPages;
+@override final  int totalPages;
  final  List<Resource> _data;
 @override List<Resource> get data {
   if (_data is EqualUnmodifiableListView) return _data;
@@ -261,7 +261,7 @@ abstract mixin class _$ResourceResponseCopyWith<$Res> implements $ResourceRespon
   factory _$ResourceResponseCopyWith(_ResourceResponse value, $Res Function(_ResourceResponse) _then) = __$ResourceResponseCopyWithImpl;
 @override @useResult
 $Res call({
- int page,@JsonKey(name: 'per_page') int perPage, int total,@JsonKey(name: 'total_pages') int totalPages, List<Resource> data
+ int page, int perPage, int total, int totalPages, List<Resource> data
 });
 
 
@@ -296,7 +296,7 @@ as List<Resource>,
 /// @nodoc
 mixin _$Resource {
 
- int get id; String get name; int get year; String get color;@JsonKey(name: 'pantone_value') String get pantoneValue;
+ int get id; String get name; int get year; String get color; String get pantoneValue;
 /// Create a copy of Resource
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -329,7 +329,7 @@ abstract mixin class $ResourceCopyWith<$Res>  {
   factory $ResourceCopyWith(Resource value, $Res Function(Resource) _then) = _$ResourceCopyWithImpl;
 @useResult
 $Res call({
- int id, String name, int year, String color,@JsonKey(name: 'pantone_value') String pantoneValue
+ int id, String name, int year, String color, String pantoneValue
 });
 
 
@@ -438,7 +438,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String name,  int year,  String color, @JsonKey(name: 'pantone_value')  String pantoneValue)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String name,  int year,  String color,  String pantoneValue)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Resource() when $default != null:
 return $default(_that.id,_that.name,_that.year,_that.color,_that.pantoneValue);case _:
@@ -459,7 +459,7 @@ return $default(_that.id,_that.name,_that.year,_that.color,_that.pantoneValue);c
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String name,  int year,  String color, @JsonKey(name: 'pantone_value')  String pantoneValue)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String name,  int year,  String color,  String pantoneValue)  $default,) {final _that = this;
 switch (_that) {
 case _Resource():
 return $default(_that.id,_that.name,_that.year,_that.color,_that.pantoneValue);case _:
@@ -479,7 +479,7 @@ return $default(_that.id,_that.name,_that.year,_that.color,_that.pantoneValue);c
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String name,  int year,  String color, @JsonKey(name: 'pantone_value')  String pantoneValue)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String name,  int year,  String color,  String pantoneValue)?  $default,) {final _that = this;
 switch (_that) {
 case _Resource() when $default != null:
 return $default(_that.id,_that.name,_that.year,_that.color,_that.pantoneValue);case _:
@@ -494,14 +494,14 @@ return $default(_that.id,_that.name,_that.year,_that.color,_that.pantoneValue);c
 @JsonSerializable()
 
 class _Resource implements Resource {
-  const _Resource({required this.id, required this.name, required this.year, required this.color, @JsonKey(name: 'pantone_value') required this.pantoneValue});
+  const _Resource({required this.id, required this.name, required this.year, required this.color, required this.pantoneValue});
   factory _Resource.fromJson(Map<String, dynamic> json) => _$ResourceFromJson(json);
 
 @override final  int id;
 @override final  String name;
 @override final  int year;
 @override final  String color;
-@override@JsonKey(name: 'pantone_value') final  String pantoneValue;
+@override final  String pantoneValue;
 
 /// Create a copy of Resource
 /// with the given fields replaced by the non-null parameter values.
@@ -536,7 +536,7 @@ abstract mixin class _$ResourceCopyWith<$Res> implements $ResourceCopyWith<$Res>
   factory _$ResourceCopyWith(_Resource value, $Res Function(_Resource) _then) = __$ResourceCopyWithImpl;
 @override @useResult
 $Res call({
- int id, String name, int year, String color,@JsonKey(name: 'pantone_value') String pantoneValue
+ int id, String name, int year, String color, String pantoneValue
 });
 
 
